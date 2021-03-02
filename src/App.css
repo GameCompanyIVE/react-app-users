@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+}
+ul{
+    margin: 0;
+    list-style: none;
+}
+h2{
+    margin-top: 0;
+}
+
+
+.user-wrap{
+    display: flex;
+    align-items: stretch;
+}
+.user-menu{
+    max-width: 220px;
+    width: 100%;
+    border-right: 1px solid;
+    min-height: 100vh;
+    padding: 50px 0 0 30px;
+}
+.user-menu li{
+    margin: 0 0 30px;
+}
+.user-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0 0 30px;
+    height: 100%;
+}
+.user-list li{
+    margin: 0 30px 30px 0;
+    border: 3px solid red;
+    padding: 15px;
+    max-width: 300px;
+    width: 100%;
+}
+
+
+.form{
+    padding: 50px 0 0 30px;
+}
+.form input{
+    margin-left: 15px;
+}
+
+
+.delete-wrap{
+    padding: 50px 0 0 30px;
+    height: 100%;
+}
+.delete-block{
+    display: flex;
+    flex-wrap: wrap;
+}
+.delete-element{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid red;
+    padding: 15px;
+    margin: 0 20px 20px 0;
+    max-width: 300px;
+    width: 100%;
+}
+.delete-element button{
+    margin-left: 10px;
+}
+.delete-element p{
+    margin: 0;
+}
+
+.show-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0 0 30px;
+    height: 100%;
+}
+.show-element{
+    border: 3px solid red;
+    padding: 30px;
+    margin: 0 20px 20px 0;
+    max-width: 300px;
+    width: 100%;
+}
+.show-element p{
+    margin: 0 0 10px;
+}
