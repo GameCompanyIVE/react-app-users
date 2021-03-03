@@ -1,33 +1,37 @@
-import React, {Component} from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import axios from 'axios'
 
-class Show extends Component {
-
-    state = {
-        persons: []
+export default function Show(props) {
+  // Grab userID from Router
+  let { userID } = useParams()
+  
+  const [user, setUser] = useState(0)
+  
+  useEffect(() => {
+    async function fetchUser() {
+      const result = await axios.get(`https://603d77d348171b0017b2d4ff.mockapi.io/users/${userID}`)
+      setUser(result.data)
     }
-
-    componentDidMount() {
-        axios.get(`https://603d77d348171b0017b2d4ff.mockapi.io/users`)
-            .then(res => {
-                const persons = res.data;
-                this.setState({ persons });
-            })
-    }
-
-    render() {
-        return (
-            <div className="show-wrap">
-                { this.state.persons.map(person =>
-                    <div className="show-element">
-                        <p>Full name: {person.name} (id {person.id})</p>
-                        <p>City: {person.city}</p>
-                        <p>Zip-code: {person.zipcode}</p>
-                        <p>Address: {person.address}</p>
-                    </div>)}
-            </div>
-        )
-    }
+    
+    fetchUser()
+  }, [userID])
+  
+  return (
+    <div>
+      <div className='navigation'>
+        <Link to='/'>Index</Link>
+      </div>
+      <h2>User Details</h2>
+      <div className='show-wrap'>
+        <div className='show-element'>
+          <p>ID: {user.id}</p>
+          <p>Full Name: {user.name}</p>
+          <p>City: {user.city}</p>
+          <p>ZIP code: {user.zipcode}</p>
+          <p>Address: {user.address}</p>
+        </div>
+      </div>
+    </div>
+  )
 }
-
-export default Show;
