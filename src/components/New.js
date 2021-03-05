@@ -17,9 +17,13 @@ export default function New(props) {
   return (
     <div>
       <div className='navigation'>
-        <Link to='/'>Index</Link>
+          <div className="container">
+              <div className="navigation-wrap">
+                  <h2>New User</h2>
+                  <Link to='/'>Index</Link>
+              </div>
+          </div>
       </div>
-      <h2>New User</h2>
       <Form submitButtonTitle='Create' onFormSubmit={onFormSubmit} />
     </div>
   )

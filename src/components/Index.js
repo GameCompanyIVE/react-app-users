@@ -27,22 +27,27 @@ export default function Index(props) {
   return (
     <div>
       <div className='navigation'>
-        <Link to='/users/new'>New User</Link>
+          <div className="container">
+              <div className="navigation-wrap">
+                  <h2>Users</h2>
+                  <Link to='/users/new'>New User</Link>
+              </div>
+          </div>
       </div>
-      <h2>Users</h2>
-      <ul className='user-list'>
-        { users.map(user =>
-          <li key={user.id}>
-            {user.id} - {user.name}
-            <span> </span>
-            <Link to={`/users/${user.id}`}>Show</Link>
-            <span> </span>
-            <Link to={`/users/${user.id}/edit`}>Edit</Link>
-            <span> </span>
-            <a href={`/users/${user.id}`} onClick={(event) => { deleteUser(event, user.id) }}>Delete</a>
-          </li>
-        )}
-      </ul>
+      <div className="container">
+          <ul className='user-list'>
+              { users.map(user =>
+                  <li key={user.id}>
+                      {user.id} - {user.name}
+                      <div>
+                          <Link to={`/users/${user.id}`}>Show</Link>
+                          <Link to={`/users/${user.id}/edit`}>Edit</Link>
+                          <a href={`/users/${user.id}`} onClick={(event) => { deleteUser(event, user.id) }}>Delete</a>
+                      </div>
+                  </li>
+              )}
+          </ul>
+      </div>
     </div>
   )
 }

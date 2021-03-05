@@ -20,17 +20,23 @@ export default function Show(props) {
   return (
     <div>
       <div className='navigation'>
-        <Link to='/'>Index</Link>
+          <div className="container">
+              <div className="navigation-wrap">
+                  <h2>User Details</h2>
+                  <Link to='/'>Index</Link>
+              </div>
+          </div>
       </div>
-      <h2>User Details</h2>
-      <div className='show-wrap'>
-        <div className='show-element'>
-          <p>ID: {user.id}</p>
-          <p>Full Name: {user.name}</p>
-          <p>City: {user.city}</p>
-          <p>ZIP code: {user.zipcode}</p>
-          <p>Address: {user.address}</p>
-        </div>
+      <div className="container">
+          <div className='show-wrap'>
+              <div className='show-element'>
+                  <p>ID: {user.id}</p>
+                  <p>Full Name: {user.name}</p>
+                  <p>City: {user.city}</p>
+                  <p>ZIP code: {user.zipcode}</p>
+                  <p>Address: {user.address}</p>
+              </div>
+          </div>
       </div>
     </div>
   )
